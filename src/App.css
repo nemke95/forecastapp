@@ -1,0 +1,365 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap');
+/* ***************************************************************** Header ************************************************************************** */
+.header{
+    height: 10vh;
+    background: linear-gradient(0deg, rgba(63, 34, 195, 1) 0%, rgba(155, 126, 64, 1) 100%);
+    box-shadow: 0px 4px 8px #171718;
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header h4 {
+    color: whitesmoke;
+    text-shadow: 1px 1px 2px black,
+        0 0 25px yellow,
+        0 0 5px darkgoldenrod;
+    padding: 5px;
+    letter-spacing: 4px;
+    font-size: 2rem;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.aboutBtn {
+    --b: 3px;
+    --s: .25em;
+    font-size: 1em;
+    --color: #373B44;
+    margin-right: 1.5rem;
+    padding: calc(.3em + var(--s)) calc(.7em + var(--s));
+    color: var(--color);
+    --_p: var(--s);
+    background:
+        conic-gradient(from 90deg at var(--b) var(--b), #0000 90deg, var(--color) 0) var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+    transition: .3s linear, color 0s, background-color 0s;
+    outline: var(--b) solid #0000;
+    outline-offset: .5em;
+    font-size: 16px;
+    border: 0;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.aboutBtn:hover,
+.aboutBtn:focus-visible {
+    --_p: 0px;
+    outline-color: var(--color);
+    outline-offset: .03em;
+}
+
+.aboutBtn:active {
+    background: var(--color);
+    color: #fff;
+}
+/* ******************************************************************************************************************************************************************** */
+/* ****************************************************************** FORM **********************************************************************************************/
+form input:focus{
+    background-color: rgb(130, 130, 130);
+    color: whitesmoke;
+    box-shadow:1px 1px 2px black,
+        0 0 15px blue,
+        0 0 5px darkblue; ;
+}
+form input::placeholder{
+    font-family: 'Dancing Script', cursive;
+    color: gray;
+}
+form button:is(:hover, :focus){
+    border: 2px solid rgb(49, 49, 145);
+    scale: 1.1;
+}
+
+/* *********************************************************************************************************************************************************************** */
+/*************************************************************** WEATHER lOCATION ************************************************************************************ */
+.weatherLocation{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    position: relative;
+    height: 80vh;
+    background-color: rgba(23, 23, 23, 0.33)
+}
+.location{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    width: calc(100vw - 80px);
+    text-align: center;
+    font-family: cursive;
+    background: #f7f2ef57;
+    color: rgba(255, 255, 255, 0.714);
+    margin: 10px 40px;
+    box-shadow: 5px 8px 8px #171718;
+    border-radius: 10px;
+    text-shadow: 1px 1px 2px black,
+            0 0 25px blue,
+            0 0 5px darkblue;
+}
+.photosContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    height: 100%;
+    filter: grayscale(80%);
+    z-index: -1;
+    flex-wrap: wrap;
+    overflow-y: hidden;
+}
+.bgCover{
+    height: 80vh;
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    filter: grayscale(40%);
+}
+.singlePhoto img {
+    width: 100%;
+    width: 25vw;
+    height: 40vh;
+    display: block;
+    box-shadow: 5px 5px 10px black;
+}
+.link {
+    background: #f7f2ef57;
+    color: rgba(255, 255, 255, 0.714);
+    text-decoration: none;
+    padding: 10px;
+    height: 3rem;
+    border-radius: 5px;
+}
+.link:hover {
+    border: 4px solid darkblue;
+    text-shadow: 1px 1px 2px black,
+        0 0 25px blue,
+        0 0 5px darkblue;
+    color: rgba(255, 255, 255, 0.714);
+}
+/* ****************************************************************************************************************************************************************** */
+/* **************************************************************WEATHER INFO *************************************************************************************** */
+.weatherInfo{
+    display: flex;
+    justify-content: space-between;
+}
+/* ***** Button sidebar ****** */
+.button-sidebar{
+    width: 15%;
+    background: linear-gradient(90deg, rgba(155, 126, 64, 1) 0%, rgba(63, 34, 195, 1) 100%);
+    text-align: center;
+}
+.button-container{
+    font-family: monospace;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    margin: 1rem 0px;
+    padding: 10px 0px;
+    width: 100%;
+    height: 50vh;
+}
+.backLink:hover{
+    background-color: goldenrod;
+    color: whitesmoke;
+}
+.backLink:active{
+    background-color: goldenrod;
+    color: white;
+    border: 2px solid goldenrod;
+}
+.btn-day{
+    padding: 5px;
+    cursor: pointer;
+}
+.active-btn-day{
+    background-color: goldenrod;
+    border: 2px solid goldenrod;
+    color: white;
+}
+.btn-day:hover{
+    border: 2px solid goldenrod;
+}
+/* ************** daily info ********** */
+.dailyInfo{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: relative;
+    width: 60%;
+    color: rgba(255, 255, 255, 0.89);
+    letter-spacing: 0.2em;
+    text-shadow: 1px 1px 2px rgb(35, 34, 34),
+                5px 0 15px blue,
+                5px 0 5px darkblue;
+    padding: 5px;
+}
+.dailyInfo-detail{
+
+    position: absolute;
+    inset:0;
+    background-color: rgba(0, 0, 0, 0.068);
+}
+section .icon{
+    color: rgb(221, 221, 229);
+    padding: 5px;
+    width: 2rem;
+    height: 2rem;
+    border: 1px solid rgb(201, 201, 207);
+    border-radius: 50%;
+}
+/* ********** Hours container ******* */
+.hours-container{
+    width: 26%;
+    text-align: center;
+    min-height: 80vh;
+    color: whitesmoke;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(90deg, rgba(60, 56, 47, 1) 0%, rgba(46, 27, 104, 1) 58%);}
+.single-hour{
+    cursor: pointer;
+    position: relative;
+    /* border: 1px solid yellow; */
+}
+.single-hour:last-child{
+    padding-bottom: 3px;
+}
+.single-active-hour {
+    box-shadow: 1px 1px 2px black,
+                0 0 25px yellow,
+                0 0 5px darkgoldenrod;
+    
+    border: 3px solid yellow;
+}
+.single-hour:hover {
+    box-shadow: 1px 1px 2px black,
+                0 0 25px yellow,
+                0 0 5px darkgoldenrod;
+}
+.rainAndSnowAnimation{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}
+/* *************************************************************************************************************************************** */
+/* *************************************************** FOOTER ***************************************************************************** */
+.footer{
+    font-family: 'Dancing Script', cursive;
+    width: 100%;
+    height: 10vh;
+    background: radial-gradient(ellipse at 50% 50%, rgba(0, 0, 0, 1) 0%, rgba(17, 0, 39, 1) 51%, rgba(54, 0, 126, 1) 100%);
+}
+/* **************************************************************************************************************************************** */
+/* ****************************************************** MODAL**************************************************************************** */
+.modal-outer{  
+  position: fixed;
+  inset: 0;
+  background: gray;
+  opacity: 0.8;
+  z-index: 999;
+  }
+.modal {
+    position: fixed;
+    top: 100px;
+      left: 25%;
+      right: 25%;
+      padding: 10px;
+      background: white;
+    z-index: 999;
+  }
+.modal button{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    margin-left: 40px;
+}
+.overflow-hidden {
+    overflow: hidden;
+}
+/* ************************************************************************************************************************************************************** */
+/*****************************************************************************error page and loading page ****************************************************** */
+.errorLoadingPage{
+    background-color: rgb(162, 162, 141);
+    height: 80vh;
+    text-align: center;
+    padding: 20px;
+    border: 3px solid black;
+    margin: 0 auto;
+}
+/* **************************************************************************************************************************************************************** */
+@media screen and (max-width: 576px) {
+    .aboutBtn {
+        margin-left: 3rem;
+    }
+
+    .header {
+        display: flex;
+        justify-content: flex-start;
+    }
+    .header h4{
+        font-size: 1rem;
+        letter-spacing: 2px;
+    }
+    .aboutBtn{
+        margin-left: 5rem;
+        margin-right: 0px;
+    }
+    .btn-day{
+        margin-right: 3px;
+        height: 100px;
+        font-size: 1rem;
+    }
+    .btn-day:last-child{
+        padding: 1px;
+    }
+    .backLink{
+        height: 100px;
+        align-self: center;
+        padding: 35px 0;
+    }
+    .backLink:active{
+        height: 100px;
+        margin: 0;
+    }
+    .weatherInfo {
+        display: inline-block;
+    }
+    .dailyInfo{
+        width: 100%;
+    }
+
+    .button-sidebar {
+        display: flex;
+        flex-direction: row;
+        height: 100px;
+        position: sticky;
+        align-items: center;
+        top: 10vh;
+        left: 0;
+        right: 0;
+        width: 100vw;
+        z-index: 999;
+    }
+    .button-container{
+        flex-direction: row;
+        justify-content:space-around;
+        height: 100px;
+        align-items: center;
+        width: 90vw;
+    }
+    .earth{
+        display: none;
+    }
+    .hours-container{
+        width: 100%;
+    }
+        .dailyGoBack {
+            display: inline;
+        
+        }
+}
+
