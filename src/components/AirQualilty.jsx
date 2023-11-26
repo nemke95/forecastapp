@@ -28,7 +28,7 @@ const AirQualilty = ({ quality }) => {
       quality === 2,
     "border-yellow-400/20 bg-yellow-400/40 text-white text-center rounded-2xl p-2.5 mb-2.5":
       quality === 3,
-    "border-yellow-400/20 bg-yellow-400/40 text-white text-center rounded-2xl p-2.5 mb-2.5":
+    "border-yellow-600/20 bg-yellow-600/40 text-white text-center rounded-2xl p-2.5 mb-2.5":
       quality === 4,
     "border-yellow-800/20 bg-yellow-800/40 text-white text-center rounded-2xl p-2.5 mb-2.5":
       quality === 5,

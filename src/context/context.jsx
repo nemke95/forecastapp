@@ -17,10 +17,10 @@ export const AppProvider = ({ children }) => {
   const [value, setValue] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isError, setIsError] = useState(false);
+  const [alertMessage, setAlertMessage] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const api_key = "e7900a6e534c420eba4171051231109";
   const url = `http://api.weatherapi.com/v1/forecast.json?key=${api_key}&q=${city}&days=3&alerts=yes&aqi=yes`;
-  // console.log(isLoading);
 
   const fetchWeather = async () => {
     setIsLoading(true);
@@ -31,7 +31,7 @@ export const AppProvider = ({ children }) => {
       setIsLoading(false);
     } catch (error) {
       console.log(error);
-      setIsError(true);
+      setAlertMessage(true);
     }
   };
 
@@ -74,6 +74,8 @@ export const AppProvider = ({ children }) => {
         setIsModalOpen,
         isLoading,
         isError,
+        alertMessage,
+        setAlertMessage,
       }}
     >
       {children}

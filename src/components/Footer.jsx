@@ -1,10 +1,9 @@
 import React from "react";
 import { useGlobalContext } from "../context/context";
-import { BsGithub } from "react-icons/bs";
 
 const Footer = () => {
   const { weather } = useGlobalContext();
-  const { alerts, current, forecast, location } = weather || "";
+  const { current } = weather || "";
   return (
     <footer className="footer">
       <p
@@ -20,8 +19,3 @@ const Footer = () => {
 };
 
 export default Footer;
-{
-  /* <a href="https://github.com/nemke95" target="_blank">
-          <BsGithub />
-        </a> */
-}

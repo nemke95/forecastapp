@@ -16,7 +16,7 @@ const TimeByHour = () => {
   });
   return (
     <div className="hours-container">
-      <h2 className="pb-4 mt-1.5 text-xl font-serif">~weather by hour~</h2>
+      <h2 className="pb-4 pt-1.5 text-xl font-serif">~weather by hour~</h2>
       {renderedHours}
     </div>
   );

@@ -88,7 +88,7 @@ form button:is(:hover, :focus){
     font-family: cursive;
     background: #f7f2ef57;
     color: rgba(255, 255, 255, 0.714);
-    margin: 10px 40px;
+    margin: 5px 40px;
     box-shadow: 5px 8px 8px #171718;
     border-radius: 10px;
     text-shadow: 1px 1px 2px black,
@@ -129,8 +129,8 @@ form button:is(:hover, :focus){
     background: #f7f2ef57;
     color: rgba(255, 255, 255, 0.714);
     text-decoration: none;
-    padding: 10px;
-    height: 3rem;
+    padding: 0.5rem;
+    height: 2rem;
     border-radius: 5px;
 }
 .link:hover {
@@ -177,11 +177,11 @@ form button:is(:hover, :focus){
 }
 .active-btn-day{
     background-color: goldenrod;
-    border: 2px solid goldenrod;
     color: white;
 }
 .btn-day:hover{
-    border: 2px solid goldenrod;
+    background-color: goldenrod;
+    color: white;
 }
 /* ************** daily info ********** */
 .dailyInfo{
@@ -264,11 +264,11 @@ section .icon{
   }
 .modal {
     position: fixed;
-    top: 100px;
-      left: 25%;
-      right: 25%;
-      padding: 10px;
-      background: white;
+    top: -100px;
+    left: 25%;
+    right: 25%;
+    padding: 10px;
+    background: white;
     z-index: 999;
   }
 .modal button{
@@ -292,9 +292,6 @@ section .icon{
 }
 /* **************************************************************************************************************************************************************** */
 @media screen and (max-width: 576px) {
-    .aboutBtn {
-        margin-left: 3rem;
-    }
 
     .header {
         display: flex;
@@ -305,8 +302,8 @@ section .icon{
         letter-spacing: 2px;
     }
     .aboutBtn{
-        margin-left: 5rem;
-        margin-right: 0px;
+        margin-left: 40px;
+        margin-right: 5px;
     }
     .btn-day{
         margin-right: 3px;
@@ -322,7 +319,6 @@ section .icon{
         padding: 35px 0;
     }
     .backLink:active{
-        height: 100px;
         margin: 0;
     }
     .weatherInfo {

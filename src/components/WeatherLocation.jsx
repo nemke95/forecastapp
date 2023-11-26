@@ -9,7 +9,7 @@ import locationCover from "../imgs/locationCover.jpg";
 import bgCover from "../imgs/bgCover.jpg";
 
 const WeatherLocation = () => {
-  const { photos, weather } = useGlobalContext();
+  const { photos, weather, alertMessage } = useGlobalContext();
   const { current, location } = weather || "";
   const localTime = location?.localtime?.slice(10);
   const lastImg =
@@ -47,6 +47,19 @@ const WeatherLocation = () => {
   return (
     <>
       <section className="weatherLocation">
+        {alertMessage && (
+          <p
+            style={{
+              margin: "0",
+              background: "red",
+              color: "white",
+              textAlign: "center",
+              marginBottom: "0",
+            }}
+          >
+            You must type appropriate name of city
+          </p>
+        )}
         <Form />
         <div
           className="location text-center rounded-2xl"
@@ -59,7 +72,7 @@ const WeatherLocation = () => {
           <div className="bg-gray-800/40 rounded-2xl pt-1.5 pb-2.5 relative">
             {rain}
             {snow}
-            <h1 className={`${locationElementClass} mt-2.5`}>
+            <h1 className={`${locationElementClass} mt-1.5`}>
               Location: <span>{location.name}</span>
             </h1>
             <h5 className={locationElementClass}>
@@ -87,7 +100,7 @@ const WeatherLocation = () => {
             <h5 className={locationElementClass}>
               lat: {location.lat} & lon: {location.lon}
             </h5>
-            <h6 className={locationElementClass}>
+            <h6 className={`${locationElementClass} mb-px`}>
               <span>{location.country}</span>
             </h6>
           </div>
